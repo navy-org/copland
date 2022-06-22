@@ -1,7 +1,7 @@
 #include "bitmap.h"
+#include "debug.h"
 
 #include <string.h>
-#include <copland/debug.h>
 
 void bitmap_set_bit(Bitmap *self, size_t index)
 {

@@ -1,10 +1,8 @@
 #pragma once 
 
-#include <map-macro/map.h>
-
-#include <brutal/str.h>
-#include <copland/io.h>
-#include <copland/range.h>
+#include "range.h"
+#include "str.h"
+#include "io.h"
 
 #include <stdint.h>
 #include <stddef.h>

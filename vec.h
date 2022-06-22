@@ -1,9 +1,10 @@
 #pragma once
 
+#include "str.h"
+
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
-#include <brutal/str.h>
 
 void vec_expand_(char **data, size_t *length, size_t *capacity, int memsz);
 

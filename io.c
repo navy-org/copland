@@ -1,4 +1,5 @@
 #include "io.h"
+#include <stddef.h>
 
 void writer_puts(Writer *self, char const *s)
 {
@@ -8,18 +9,10 @@ void writer_puts(Writer *self, char const *s)
     }
 }
 
-Writer writer_init(void (*putc)(Writer *, char))
+Writer writer_init_impl(void (*putc)(Writer *, char), void (*puts)(Writer *, const char *))
 {
     return (Writer) {
         .putc = putc,
-        .puts = writer_puts
-    };
-}
-
-Writer writer_init2(void (*putc)(Writer *, char), void (*puts)(Writer *, char const *))
-{
-    return (Writer) {
-        .putc = putc,
-        .puts = puts
+        .puts = puts == NULL ? writer_puts : puts
     };
 }

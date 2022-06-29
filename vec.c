@@ -1,4 +1,4 @@
-#include "vec.h"
+#include "base.h"
 
 #include <assert.h>
 #include <stdlib.h>
@@ -11,7 +11,10 @@ void vec_expand_(char **data, size_t *length, size_t *capacity, int memsz)
         size_t n = (*capacity == 0) ? 1 : *capacity << 1;
         ptr = realloc(*data, n * memsz);
 
-        assert(ptr != NULL);
+        if (ptr != NULL)
+        {
+            panic$("Couldn't allocate memory");
+        }
 
         *data = ptr;
         *capacity = n;

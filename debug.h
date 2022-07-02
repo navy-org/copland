@@ -5,7 +5,7 @@
 #include <stddef.h>
 
 #define __FILENAME__                                                                               \
-    (__builtin_strrchr(__FILE__, '/') ? __builtin_strrchr(__FILE__, '/') + 1 : __FILE__)
+    (__builtin_strrchr(__FILE__, '/') ? __builtin_strchr(__FILE__, '/') + 1 : __FILE__)
 
 #define log$(FORMAT, ...) \
 	log_impl(__FILENAME__, __LINE__, FORMAT, PRINT_ARGS(__VA_ARGS__));

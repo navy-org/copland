@@ -11,7 +11,7 @@ void vec_expand_(char **data, size_t *length, size_t *capacity, int memsz)
         size_t n = (*capacity == 0) ? 1 : *capacity << 1;
         ptr = realloc(*data, n * memsz);
 
-        if (ptr != NULL)
+        if (ptr == NULL)
         {
             panic$("Couldn't allocate memory");
         }

@@ -1,7 +1,0 @@
-{
-    "id": "copland",
-    "type": "lib",
-    "depends": [
-        "libc"
-    ]
-}
